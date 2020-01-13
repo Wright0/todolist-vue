@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <title>To do list</title>
     <script src="./js/bundle.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Muli:300&display=swap" rel="stylesheet">
   </head>
   <body>
     <div id="app">
@@ -18,9 +20,13 @@
       </form>
 
       <h2>To do:</h2>
+      <span class="low">Low priority</span> <span class="medium">Medium priority</span> <span class="high">High priority</span>
+
       <ul>
-        <li v-for="item in items">
-          {{ item.task }}
+        <li v-for="(item, index) in items" v-bind:class="item.priority">
+          <span>{{ item.task }}</span>
+          <button v-if="!item.isComplete" @click="completeTask(index)">Check off</button>
+
         </li>
       </ul>
 
