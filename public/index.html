@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>To do list</title>
+    <script src="./js/bundle.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h1>To-do Tracker</h1>
+      <form @submit.prevent="addNewItem">
+
+        <label for="new-item">Add new item:</label>
+        <input type="text" id="new-item" v-model="newItem.task">
+
+        <input type="submit" value="Add new item" />
+
+      </form>
+
+      <h2>To do:</h2>
+      <ul>
+        <li v-for="item in items">
+          {{ item.task }}
+        </li>
+      </ul>
+
+    </div>
+  </body>
+</html>
