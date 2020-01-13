@@ -23,8 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
       //   is
       // },
 
-      completeTask: function(index){
-        this.items[index].isComplete = true;
+      toggleCompletionStatus: function(index){
+        this.items[index].isComplete = ! this.items[index].isComplete
       }
     }
   });

@@ -3,13 +3,6 @@ body{
 
 }
 
-/* .completed{
-
-}
-
-.not-completed{
-} */
-
 span.low, span.medium, span.high {
   margin: 10px;
   padding: 5px;

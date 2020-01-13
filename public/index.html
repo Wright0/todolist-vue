@@ -24,10 +24,9 @@
 
       <ul>
         <li v-for="(item, index) in items" v-bind:class="item.priority">
-          <span v-if="item.isComplete"><del>{{ item.task }}</del></span>
+          <input type="checkbox" v-bind:checked="item.isComplete ? 'checked' : ''" @click="toggleCompletionStatus(index)">
+          <span v-if="item.isComplete" ><del>{{ item.task }}</del></span>
           <span v-if="!item.isComplete">{{ item.task }}</span>
-          <button v-if="!item.isComplete" @click="completeTask(index)">Check off</button>
-
         </li>
       </ul>
 
