@@ -12,8 +12,15 @@
       <h1>To-do Tracker</h1>
       <form @submit.prevent="addNewItem">
 
-        <label for="new-item">Add new task:</label>
-        <input type="text" id="new-item" v-model="newItem.task">
+        <label for="new-item-task">Add new task:</label>
+        <input type="text" id="new-item-task" v-model="newItem.task">
+
+        <label for="new-item-priority">Set priority level:</label>
+        <select name="new-item-priority" v-model="newItem.priority">
+          <option value="low">Low</option>
+          <option value="medium">Medium</option>
+          <option value="high">High</option>
+        </select>
 
         <input type="submit" value="Add" />
 

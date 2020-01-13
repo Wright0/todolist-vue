@@ -10,18 +10,14 @@ document.addEventListener('DOMContentLoaded', () => {
         {task: "water plants", priority: "medium", isComplete: false},
         {task: "find credit card", priority: "high", isComplete: true}
       ],
-      newItem: {task: "", isComplete: false}
+      newItem: {task: "", priority: "", isComplete: false}
     },
 
     methods: {
       addNewItem: function(){
         this.items.push(this.newItem);
-        this.newItem = {task: "", isComplete: false}
+        this.newItem = {task: "", priority: "", isComplete: false}
       },
-
-      // setPriorityLevel: function(priority){
-      //   is
-      // },
 
       toggleCompletionStatus: function(index){
         this.items[index].isComplete = ! this.items[index].isComplete
