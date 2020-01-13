@@ -6,14 +6,18 @@ document.addEventListener('DOMContentLoaded', () => {
     el: "#app",
     data: {
       items: [
-        {task: "wash kitchen", isComplete: false},
-        {task: "find credit card", isComplete: false}
+        {task: "organize kitchen cabinets", priority: "low", isComplete: false},
+        {task: "water plants", priority: "medium", isComplete: false},
+        {task: "find credit card", priority: "high", isComplete: false}
       ],
       newItem: {task: "", isComplete: false}
     },
 
-    // methods: {
-    //
-    // }
+    methods: {
+      addNewItem: function(){
+        this.items.push(this.newItem);
+        this.newItem = {task: "", isComplete: false}
+      }
+    }
   });
 });
