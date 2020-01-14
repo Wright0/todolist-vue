@@ -30,8 +30,8 @@
       <span class="low">Low priority</span> <span class="medium">Medium priority</span> <span class="high">High priority</span>
 
       <ul>
-        <li v-for="(item, index) in items" v-bind:class="item.priority">
-          <input type="checkbox" v-bind:checked="item.isComplete ? 'checked' : ''" @click="toggleCompletionStatus(index)">
+        <li v-for="(item, index) in items" v-bind:class="[listItemClass, item.priority]">
+          <input type="checkbox" v-bind:checked="item.isComplete ? 'checked' : ''" @click="toggleCompletionStatus(index)" v-bind:ref="item.priority">
           <span v-if="item.isComplete" ><del>{{ item.task }}</del></span>
           <span v-if="!item.isComplete">{{ item.task }}</span>
         </li>

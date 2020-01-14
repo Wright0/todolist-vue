@@ -10,7 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
         {task: "water plants", priority: "medium", isComplete: false},
         {task: "find credit card", priority: "high", isComplete: true}
       ],
-      newItem: {task: "", priority: "", isComplete: false}
+      newItem: {task: "", priority: "", isComplete: false},
+      listItemClass: 'list-item'
     },
 
     methods: {
